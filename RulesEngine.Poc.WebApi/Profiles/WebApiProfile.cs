@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using RuleEnginePOCPublicContracts.Configurations;
-using RulesEnginePOCWebApi.DTOs;
+using RuleEngine.Poc.Public.Contracts.Configurations;
+using RulesEngine.Poc.WebApi.DTOs;
 
-namespace RulesEnginePOCWebApi.Profiles
+namespace RulesEngine.Poc.WebApi.Profiles
 {
     public class WebApiProfile : Profile
     {

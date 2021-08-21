@@ -2,11 +2,11 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
-using RuleEnginePOCPublicContracts.Services;
+using RuleEngine.Poc.Public.Contracts.Services;
 using RulesEngine.Interfaces;
 using RulesEngine.Models;
 
-namespace RulesEnginePOC.Services
+namespace RulesEngine.Poc.Services
 {
     public class RulesEngineService : IRulesEngineService
     {

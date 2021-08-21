@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using RuleEnginePOCPublicContracts.Services;
-using RulesEnginePOC.Configurations;
-using RulesEnginePOCWebApi.DTOs;
+using RuleEngine.Poc.Public.Contracts.Services;
+using RulesEngine.Poc.Configurations;
+using RulesEngine.Poc.WebApi.DTOs;
 
-namespace RulesEnginePOCWebApi.Controllers
+namespace RulesEngine.Poc.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -28,10 +28,11 @@ namespace RulesEnginePOCWebApi.Controllers
         }
 
         [HttpGet]
-        public async Task<EventsTableDto> BuildConfiguration([FromQuery] int categoryId, [FromQuery] string eventPhase, [FromQuery] Guid segmentGuid)
+        public async Task<EventsTableDto> BuildConfiguration([FromQuery] int categoryId, [FromQuery] string eventPhase,
+            [FromQuery] Guid segmentGuid)
         {
             var config = new EventsTableConfiguration();
-            
+
             var parameters = new Dictionary<string, object>
             {
                 {
@@ -44,12 +45,12 @@ namespace RulesEnginePOCWebApi.Controllers
                     nameof(segmentGuid), segmentGuid
                 }
             };
-            
+
             var transformedConfiguration =
                 await _rulesEngineService.TransformConfiguration(config, parameters);
 
             var eventsTableDto = _mapper.Map<EventsTableDto>(transformedConfiguration);
-            
+
             return eventsTableDto;
         }
     }

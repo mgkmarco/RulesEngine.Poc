@@ -1,7 +1,7 @@
 ﻿using System;
 using RulesEngine.Actions;
 
-namespace RuleEnginePOCPublicContracts.Extensions
+namespace RulesEngine.Poc.Extensions
 {
     public static class ActionContextExtensions
     {
@@ -13,7 +13,7 @@ namespace RuleEnginePOCPublicContracts.Extensions
             {
                 contextValue = context.GetContext<TSource>(contextKey);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return fallback;
             }

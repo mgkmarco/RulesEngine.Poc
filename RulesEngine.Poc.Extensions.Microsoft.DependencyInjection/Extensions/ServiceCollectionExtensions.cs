@@ -5,14 +5,14 @@ using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using RuleEnginePOCPublicContracts.Services;
+using RuleEngine.Poc.Public.Contracts.Services;
 using RulesEngine.Actions;
 using RulesEngine.Interfaces;
 using RulesEngine.Models;
-using RulesEnginePOC.Actions;
-using RulesEnginePOC.Services;
+using RulesEngine.Poc.Actions;
+using RulesEngine.Poc.Services;
 
-namespace RulesEnginePOCWebApi.Extensions
+namespace RulesEngine.Poc.Extensions.Microsoft.DependencyInjection.Extensions
 {
     public static class ServiceCollectionExtensions
     {
@@ -40,10 +40,10 @@ namespace RulesEnginePOCWebApi.Extensions
                     }
                 }
 
-                var logger = provider.GetRequiredService<ILogger<RulesEngine.RulesEngine>>();
-                return new RulesEngine.RulesEngine(workflowRules.ToArray(), logger, new ReSettings
+                var logger = provider.GetRequiredService<ILogger<RulesEngine>>();
+                return new RulesEngine(workflowRules.ToArray(), logger, new ReSettings
                 {
-                    CustomActions = new Dictionary<string, System.Func<ActionBase>>
+                    CustomActions = new Dictionary<string, Func<ActionBase>>
                     {
                         {"MergeEventTableConfigurationAction", () => new MergeEventTableConfigurationAction()}
                     }

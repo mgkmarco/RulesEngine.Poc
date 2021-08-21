@@ -1,10 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RulesEnginePOC", "RulesEnginePOC\RulesEnginePOC.csproj", "{C7FC81FD-C832-453E-90FB-FC0BCE8A5BC9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RulesEngine.Poc", "RulesEngine.Poc\RulesEngine.Poc.csproj", "{C7FC81FD-C832-453E-90FB-FC0BCE8A5BC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RulesEnginePOCWebApi", "RulesEnginePOCWebApi\RulesEnginePOCWebApi.csproj", "{C419371C-3FC9-4E3B-923B-178C3576F0DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RulesEngine.Poc.WebApi", "RulesEngine.Poc.WebApi\RulesEngine.Poc.WebApi.csproj", "{C419371C-3FC9-4E3B-923B-178C3576F0DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuleEnginePOCPublicContracts", "RuleEnginePOCPublicContracts\RuleEnginePOCPublicContracts.csproj", "{26E01980-465B-4D40-9E6B-4886D506DC22}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RulesEngine.Poc.Public.Contracts", "RulesEngine.Poc.Public.Contracts\RulesEngine.Poc.Public.Contracts.csproj", "{26E01980-465B-4D40-9E6B-4886D506DC22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RulesEngine.Poc.Extensions.Microsoft.DependencyInjection", "RulesEngine.Poc.Extensions.Microsoft.DependencyInjection\RulesEngine.Poc.Extensions.Microsoft.DependencyInjection.csproj", "{7E64C436-D99E-456B-9371-96B958F45CAA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +26,9 @@ Global
 		{26E01980-465B-4D40-9E6B-4886D506DC22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26E01980-465B-4D40-9E6B-4886D506DC22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26E01980-465B-4D40-9E6B-4886D506DC22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E64C436-D99E-456B-9371-96B958F45CAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E64C436-D99E-456B-9371-96B958F45CAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E64C436-D99E-456B-9371-96B958F45CAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E64C436-D99E-456B-9371-96B958F45CAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

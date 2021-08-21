@@ -1,6 +1,6 @@
 using System;
 
-namespace RulesEnginePOCWebApi
+namespace RulesEngine.Poc.WebApi
 {
     public class WeatherForecast
     {

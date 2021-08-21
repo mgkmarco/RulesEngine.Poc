@@ -1,4 +1,4 @@
-﻿namespace RulesEnginePOCWebApi.DTOs
+﻿namespace RulesEngine.Poc.WebApi.DTOs
 {
     public class EventsTableDto
     {

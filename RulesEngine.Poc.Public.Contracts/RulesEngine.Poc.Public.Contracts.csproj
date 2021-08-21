@@ -2,10 +2,11 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>RuleEngine.Poc.Public.Contracts</RootNamespace>
     </PropertyGroup>
-    
+
     <ItemGroup>
-      <ProjectReference Include="..\RuleEnginePOCPublicContracts\RuleEnginePOCPublicContracts.csproj" />
+        <PackageReference Include="RulesEngine" Version="3.3.0" />
     </ItemGroup>
 
 </Project>

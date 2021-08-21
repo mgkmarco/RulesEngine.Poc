@@ -1,4 +1,4 @@
-﻿namespace RuleEnginePOCPublicContracts.Configurations
+﻿namespace RuleEngine.Poc.Public.Contracts.Configurations
 {
     public interface IEventsTableConfiguration
     {
