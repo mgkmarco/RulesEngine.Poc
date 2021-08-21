@@ -1,0 +1,65 @@
+﻿[
+  {
+    "WorkflowName": "EventsTableWorkflow",
+    "Rules": [
+      {
+        "RuleName": "First-Rule",
+        "SuccessEvent": "25",
+        "ErrorMessage": "One or more adjust rules failed.",
+        "ErrorType": "Error",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "categoryId == 1 AND string.Equals(eventPhase, \"all\", StringComparison.InvariantCultureIgnoreCase)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "MergeEventTableConfigurationAction",
+            "Context": {
+              "PageSize": 15,
+              "LastPageOverflowThreshold": 12,
+              "MaximumNumberOfSelections": 24
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "Second-Rule",
+        "SuccessEvent": "25",
+        "ErrorMessage": "One or more adjust rules failed.",
+        "ErrorType": "Error",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "categoryId == 1 AND string.Equals(eventPhase, \"all\", StringComparison.InvariantCultureIgnoreCase) AND segmentGuid = \"3bccc0b5-911a-4955-8a46-14606e5c5d5a\"",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "MergeEventTableConfigurationAction",
+            "Context": {
+              "MarketTemplateIds": [
+                "MW3W",
+                "MTG2W25|MTG2W",
+                "M3WHCP",
+                "BTTS",
+                "DC",
+                "MW3W1H",
+                "1HTG"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "Third-Rule",
+        "SuccessEvent": "25",
+        "ErrorMessage": "One or more adjust rules failed.",
+        "ErrorType": "Error",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "categoryId == 1",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "MergeEventTableConfigurationAction",
+            "Context": {
+              "CacheTime": 99
+            }
+          }
+        }
+      }
+    ]
+  }
+]
