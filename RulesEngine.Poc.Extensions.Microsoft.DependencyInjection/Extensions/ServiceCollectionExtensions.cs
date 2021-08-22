@@ -5,11 +5,13 @@ using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using RuleEngine.Poc.Public.Contracts.Providers;
 using RuleEngine.Poc.Public.Contracts.Services;
 using RulesEngine.Actions;
 using RulesEngine.Interfaces;
 using RulesEngine.Models;
 using RulesEngine.Poc.Actions;
+using RulesEngine.Poc.Providers;
 using RulesEngine.Poc.Services;
 
 namespace RulesEngine.Poc.Extensions.Microsoft.DependencyInjection.Extensions
@@ -51,6 +53,7 @@ namespace RulesEngine.Poc.Extensions.Microsoft.DependencyInjection.Extensions
             });
             
             services.AddSingleton<IRulesEngineService, RulesEngineService>();
+            services.AddSingleton<IWorkflowProvider, WorkflowProvider>();
         }
     }
 }

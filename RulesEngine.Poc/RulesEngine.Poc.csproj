@@ -8,8 +8,4 @@
       <ProjectReference Include="..\RulesEngine.Poc.Public.Contracts\RulesEngine.Poc.Public.Contracts.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="WorkflowProviders" />
-    </ItemGroup>
-
 </Project>

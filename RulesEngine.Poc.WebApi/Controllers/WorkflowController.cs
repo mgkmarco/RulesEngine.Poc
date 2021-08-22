@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using RuleEngine.Poc.Public.Contracts.Configurations;
 using RuleEngine.Poc.Public.Contracts.Services;
 using RulesEngine.Poc.Configurations;
 using RulesEngine.Poc.WebApi.DTOs;
@@ -28,10 +31,19 @@ namespace RulesEngine.Poc.WebApi.Controllers
         }
 
         [HttpGet]
-        public async Task<EventsTableDto> BuildConfiguration([FromQuery] int categoryId, [FromQuery] string eventPhase,
+        public async Task<IWidgetConfiguration> BuildConfiguration([FromQuery] string widgetType, [FromQuery] int categoryId,
+            [FromQuery] string eventPhase,
             [FromQuery] Guid segmentGuid)
         {
-            var config = new EventsTableConfiguration();
+            // validation for the sake of the POC
+            if (!new[] {"CarouselWidget", "EventsTableWidget"}.Any(c =>
+                string.Equals(c, widgetType, StringComparison.InvariantCultureIgnoreCase)))
+            {
+                throw new InvalidEnumArgumentException($"Widget Type provided is not allowed! Allowed values are: CarouselWidget, EventsTableWidget");
+            }
+
+            // Pull the config... this can be mem cache or whatever
+            var widgetConfiguration = await _rulesEngineService.GetWidgetConfiguration(widgetType);
 
             var parameters = new Dictionary<string, object>
             {
@@ -47,11 +59,9 @@ namespace RulesEngine.Poc.WebApi.Controllers
             };
 
             var transformedConfiguration =
-                await _rulesEngineService.TransformConfiguration(config, parameters);
+                await _rulesEngineService.TransformConfiguration(widgetConfiguration, parameters);
 
-            var eventsTableDto = _mapper.Map<EventsTableDto>(transformedConfiguration);
-
-            return eventsTableDto;
+            return transformedConfiguration;
         }
     }
 }

@@ -1,0 +1,44 @@
+﻿{
+  "Type": "RulesEngine.Poc.Configurations.CarouselConfiguration",
+  "ConfigurationKey": "Carousel-v2",
+  "EventCount": 6,
+  "CarouselEventType": [
+    0,
+    0,
+    3,
+    0,
+    0,
+    3
+  ],
+  "CarouselMarketType": [
+    0,
+    1,
+    0,
+    0,
+    1,
+    0
+  ],
+  "MarketTemplateIds": [
+    "MW3W",
+    "MW2W"
+  ],
+  "OutrightMarketTemplateIds": [
+    "WIN",
+    "TOP4",
+    "NOTRELEG",
+    "RF"
+  ],
+  "PlayerMarketTemplateIds": [
+    "AGS",
+    "NPSL",
+    "NPYCL",
+    "PTOTPASSOU",
+    "PTOTSHOU",
+    "PFCOU",
+    "BGS",
+    "NPBL",
+    "NGS",
+    "PFS"
+  ],
+  "CacheTime": 60
+}

@@ -10,6 +10,9 @@ namespace RulesEngine.Poc.WebApi.Profiles
         {
             CreateMap<EventsTableDto, IEventsTableConfiguration>()
                 .ReverseMap();
+            
+            CreateMap<CarouselDto, ICarouselConfiguration>()
+                .ReverseMap();
         }
     }
 }

@@ -1,0 +1,9 @@
+﻿{
+  "Type": "RulesEngine.Poc.Configurations.EventsTableConfiguration",
+  "ConfigurationKey": "EventsTable-v2",
+  "MarketTemplateIds": [],
+  "PageSize": 0,
+  "LastPageOverflowThreshold": 5,
+  "MaximumNumberOfSelections": 3,
+  "CacheTime": 30
+}
